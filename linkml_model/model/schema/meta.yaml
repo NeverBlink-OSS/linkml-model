@@ -165,6 +165,7 @@ slots:
     aliases:
       - long name
     domain: element
+    range: langstring
     description: >-
       A concise human-readable display label for the element. The title should mirror the name,
       and should use ordinary textual punctuation.
@@ -262,6 +263,7 @@ slots:
     aliases:
       - definition
     domain: element
+    range: langstring
     description: >-
       a textual description of the element's purpose and use
     slot_uri: skos:definition

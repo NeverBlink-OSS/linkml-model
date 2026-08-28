@@ -165,6 +165,15 @@ types:
     notes: >-
       If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "ncname".
 
+  langstring:
+    uri: linkml:LocalizedText
+    base: LocalizedText
+    repr: str # ?
+    description: >-
+      String with optional localization variants. Either a plain, non-langauge-tagged string or a multi-language mapping with at least one value.
+      In JSON, plain strings should be mapped to JSON strings, and multi-language strings should be represented as a dictionary object of a language tag to a value in that language.
+      In RDF, plain strings should be mapped to xsd:string, and multi-language strings to rdf:langString.
+
   objectidentifier:
     uri: shex:iri
     base: ElementIdentifier
