@@ -262,6 +262,7 @@ slots:
     aliases:
       - definition
     domain: element
+    range: langstring
     description: >-
       a textual description of the element's purpose and use
     slot_uri: skos:definition
