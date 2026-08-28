@@ -168,7 +168,7 @@ types:
   langstring:
     uri: linkml:LocalizedText
     base: LocalizedText
-    repr: str # ?
+    repr: str # TODO for LinkML-Py maintainers: change this
     description: >-
       String with optional localization variants. Either a plain, non-langauge-tagged string or a multi-language mapping with at least one value.
       In JSON, plain strings should be mapped to JSON strings, and multi-language strings should be represented as a dictionary object of a language tag to a value in that language.
