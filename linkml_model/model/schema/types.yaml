@@ -166,8 +166,8 @@ types:
       If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "ncname".
 
   langstring:
-    uri: linkml:LocalizedString
-    base: LocalizedString
+    uri: linkml:LocalizedText
+    base: LocalizedText
     repr: str
 
   objectidentifier:
