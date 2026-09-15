@@ -165,6 +165,7 @@ slots:
     aliases:
       - long name
     domain: element
+    range: langstring
     description: >-
       A concise human-readable display label for the element. The title should mirror the name,
       and should use ordinary textual punctuation.
@@ -262,6 +263,7 @@ slots:
     aliases:
       - definition
     domain: element
+    range: langstring
     description: >-
       a textual description of the element's purpose and use
     slot_uri: skos:definition
@@ -1181,6 +1183,7 @@ slots:
       - order
       - precedence
       - display order
+    inherited: true
     description: the relative order in which the element occurs, lower values are given precedence
     comments:
       - the rank of an element does not affect the semantics
@@ -1940,15 +1943,15 @@ slots:
 
   alias:
     rank: 6
-    domain: slot_definition
     range: string
     slot_uri: skos:prefLabel
     description: >-
-      the name used for a slot in the context of its owning class.  If present, this is used instead of the actual
-      slot name.
+      The alternative name to be used in serializations of an instance instead of the canonical name.
     comments:
       - an example of alias is used within this metamodel, slot_definitions is aliases as slots
       - not to be confused with aliases, which indicates a set of terms to be used for search purposes.
+      - This should be used for describing the structure of already existing instances.
+      - For human-readable labels, prefer 'title' instead.
     in_subset:
       - SpecificationSubset
 
@@ -2593,16 +2596,16 @@ classes:
       - source
       - in_language
       - see_also
-      - deprecated element has exact replacement
-      - deprecated element has possible replacement
+      - deprecated_element_has_exact_replacement
+      - deprecated_element_has_possible_replacement
       - aliases
       - structured_aliases
       - mappings
-      - exact mappings
-      - close mappings
-      - related mappings
-      - narrow mappings
-      - broad mappings
+      - exact_mappings
+      - close_mappings
+      - related_mappings
+      - narrow_mappings
+      - broad_mappings
       - created_by
       - contributors
       - created_on
@@ -2743,6 +2746,7 @@ classes:
       - type_uri
       - repr
       - union_of
+      - alias
     slot_usage:
       union_of:
         range: type_definition
@@ -2828,6 +2832,7 @@ classes:
       - OwlProfile
     slots:
       - enum_uri
+      - alias
 
   enum_binding:
     description: >-
@@ -3285,6 +3290,7 @@ classes:
     slots:
       - text
       - description
+      - alias
       - meaning
       - unit
       - instantiates
