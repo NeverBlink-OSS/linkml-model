@@ -24,7 +24,7 @@ entries:
     action:
       type: JsonSchemaGenerate
     assertion:
-      type: JsonPathAssertion
+      type: JsonPointerAssertion
       path: $defs/SomeClass/description
       value: Some text that describes the class
 
@@ -35,7 +35,7 @@ entries:
     action:
       type: DeriveAction
     assertion:
-      type: JsonPathAssertion
+      type: JsonPointerAssertion
       path: classes/SomeClass/attributes/zero_rank_slot/rank
       value: 0
 
@@ -45,17 +45,17 @@ entries:
     action:
       type: DeriveAction
     assertion:
-      type: JsonPathAssertion
+      type: JsonPointerAssertion
       path: classes/SomeClass/attributes/second_slot/rank
       value: 2
 
   slot_to_class_rank_set:
-    schema: rank/class2class.yaml
+    schema: rank/slot2class.yaml
     description: The derivation procedure should use the provided slot_usage rank
     action:
       type: DeriveAction
     assertion:
-      type: JsonPathAssertion
+      type: JsonPointerAssertion
       path: classes/SomeClass/attributes/second_slot/rank
       value: 2
 
@@ -65,6 +65,6 @@ entries:
     action:
       type: DeriveAction
     assertion:
-      type: JsonPathAssertion
+      type: JsonPointerAssertion
       path: classes/SomeClass/attributes/second_slot/rank
       value: 2
