@@ -161,7 +161,8 @@ slots:
       - https://linkml.io/linkml/faq/modeling.html#why-are-my-class-names-translated-to-camelcase
 
   title:
-    rank: 3
+    rank: 11
+    mixins: [ metadata_important ]
     aliases:
       - long name
     domain: element
@@ -174,6 +175,7 @@ slots:
       - BasicSubset
 
   conforms_to:
+    mixins: [ metadata_alignment ]
     domain: element
     description: An established standard to which the element conforms.
     slot_uri: dcterms:conformsTo
@@ -183,6 +185,7 @@ slots:
       - linkml:implements
 
   implements:
+    mixins: [ metadata_alignment ]
     domain: element
     range: uriorcurie
     description: >-
@@ -192,6 +195,7 @@ slots:
     multivalued: true
 
   instantiates:
+    mixins: [ metadata_alignment ]
     domain: element
     range: uriorcurie
     description: >-
@@ -199,6 +203,8 @@ slots:
     multivalued: true
 
   categories:
+    rank: 22
+    mixins: [ metadata_important ]
     range: uriorcurie
     singular_name: category
     slot_uri: dcterms:subject
@@ -211,6 +217,8 @@ slots:
       - BasicSubset
 
   keywords:
+    rank: 23
+    mixins: [ metadata_important ]
     domain: element
     singular_name: keyword
     description: >-
@@ -259,7 +267,8 @@ slots:
       - https://github.com/linkml/linkml/issues/194
 
   description:
-    rank: 5
+    rank: 14
+    mixins: [ metadata_important ]
     aliases:
       - definition
     domain: element
@@ -275,6 +284,7 @@ slots:
       - BasicSubset
 
   structured_aliases:
+    mixins: [ metadata_alt ]
     slot_uri: skosxl:altLabel
     range: structured_alias
     multivalued: true
@@ -285,6 +295,8 @@ slots:
       - linkml:aliases
 
   aliases:
+    rank: 15
+    mixins: [ metadata_important ]
     aliases:
       - synonyms
       - alternate names
@@ -317,6 +329,8 @@ slots:
       - BasicSubset
 
   todos:
+    rank: 98
+    mixins: [ metadata_important ]
     domain: element
     range: string
     description: Outstanding issues that needs resolution
@@ -325,6 +339,8 @@ slots:
       - BasicSubset
 
   notes:
+    rank: 99
+    mixins: [ metadata_important ]
     domain: element
     multivalued: true
     range: langstring
@@ -334,6 +350,8 @@ slots:
       - BasicSubset
 
   comments:
+    rank: 18
+    mixins: [ metadata_important ]
     domain: element
     multivalued: true
     range: langstring
@@ -376,6 +394,8 @@ slots:
       the imports entry that this element was derived from.  Empty means primary source
 
   see_also:
+    rank: 19
+    mixins: [ metadata_important ]
     domain: element
     multivalued: true
     range: uriorcurie
@@ -438,6 +458,8 @@ slots:
       - BasicSubset
 
   status:
+    rank: 17
+    mixins: [ metadata_important ]
     aliases:
       - workflow status
     domain: element
@@ -481,6 +503,8 @@ slots:
       The context in which an alias should be applied
 
   in_language:
+    rank: 16
+    mixins: [ metadata_important ]
     slot_uri: schema:inLanguage
     range: string
     description: >-
@@ -643,6 +667,7 @@ slots:
       - BasicSubset
 
   permissible_values:
+    rank: 100
     aliases:
       - coded values
     domain: enum_expression
@@ -841,6 +866,8 @@ slots:
         this list are added to the prefix sections of the target models.
 
   version:
+    rank: 12
+    mixins: [ metadata_important ]
     domain: schema_definition
     description: particular version of schema
     slot_uri: pav:version
@@ -869,7 +896,8 @@ slots:
     status: testing
 
   license:
-    rank: 31
+    rank: 21
+    mixins: [ metadata_important ]
     domain: schema_definition
     description: license for the schema
     slot_uri: dcterms:license
@@ -906,7 +934,7 @@ slots:
       - BasicSubset
 
   subsets:
-    rank: 8
+    rank: 104
     domain: schema_definition
     multivalued: true
     range: subset_definition
@@ -919,7 +947,7 @@ slots:
       - BasicSubset
 
   types:
-    rank: 6
+    rank: 101
     domain: schema_definition
     range: type_definition
     multivalued: true
@@ -931,7 +959,7 @@ slots:
       - OwlProfile
 
   enums:
-    rank: 5
+    rank: 102
     domain: schema_definition
     range: enum_definition
     multivalued: true
@@ -944,7 +972,7 @@ slots:
       - OwlProfile
 
   slot_definitions:
-    rank: 4
+    rank: 103
     domain: schema_definition
     multivalued: true
     range: slot_definition
@@ -959,7 +987,7 @@ slots:
       - OwlProfile
 
   classes:
-    rank: 3
+    rank: 100
     domain: schema_definition
     range: class_definition
     multivalued: true
@@ -974,6 +1002,8 @@ slots:
       - OwlProfile
 
   metamodel_version:
+    rank: 13
+    mixins: [ metadata_important ]
     domain: schema_definition
     readonly: supplied by the schema loader or schema view
     description: Version of the metamodel used to load the schema
@@ -1016,7 +1046,7 @@ slots:
   # Class definition slots
   # -----------------------------------
   slots:
-    rank: 19
+    rank: 100
     domain: class_definition
     multivalued: true
     range: slot_definition
@@ -1032,7 +1062,7 @@ slots:
       - BasicSubset
 
   slot_usage:
-    rank: 23
+    rank: 101
     domain: class_definition
     multivalued: true
     range: slot_definition
@@ -1234,7 +1264,7 @@ slots:
       - SpecificationSubset
 
   attributes:
-    rank: 29
+    rank: 102
     domain: class_definition
     multivalued: true
     range: slot_definition
@@ -2334,6 +2364,7 @@ slots:
       - BasicSubset
 
   alt_descriptions:
+    mixins: [ metadata_alt ]
     aliases:
       - alternate definitions
     domain: element
@@ -2371,6 +2402,8 @@ slots:
       - BasicSubset
 
   examples:
+    rank: 20
+    mixins: [ metadata_important ]
     singular_name: example
     domain: element
     multivalued: true
@@ -2494,6 +2527,7 @@ slots:
     slot_uri: skos:altLabel
 
   local_names:
+    mixins: [ metadata_alt ]
     domain: element
     range: local_name
     multivalued: true
@@ -2572,6 +2606,70 @@ slots:
       - in the context of RDF, this should be used for slots that can be modeled using the RDF reification vocabulary
       - in the context of property graphs, this should be used on edge classes to indicate which slots represent the input and output nodes
 
+  metadata_important:
+    mixin: true
+    description: Grouping slot for important metadata.
+    notes:
+      - Members of the group should define rank between 10-100
+
+  metadata_alt:
+    mixin: true
+    description: Grouping slot for alternative versions of metadata_important slots.
+    rank: 101
+
+  metadata_alignment:
+    mixin: true
+    description: Grouping slot for alignment information.
+    rank: 102
+
+  metadata_mapping:
+    mixin: true
+    description: Grouping slot for mappings information.
+    rank: 103
+
+  metadata_deprecation:
+    mixin: true
+    description: Grouping slot for deprecation information.
+    rank: 104
+
+  metadata_provenance:
+    mixin: true
+    description: Grouping slot for provenance information.
+    rank: 105
+
+  metadata_authorship:
+    mixin: true
+    description: Grouping slot for authorship information.
+    rank: 105
+
+  functional_important:
+    mixin: true
+    description: Grouping slot for important functional slots.
+    notes:
+      - Members of the group should define rank between 200-300
+
+  functional_auxiliary:
+    mixin: true
+    description: Grouping slot for additional functional slots.
+    rank: 398
+
+  functional_extensions:
+    mixin: true
+    description: Grouping slot for extensions/annotations
+    rank: 399
+
+  functional_main:
+    mixin: true
+    description: |
+      Grouping slot for main body of elements, which usually contains the most information.
+      They come last - this allows a logical grouping
+    notes:
+      - Members of the group should define rank between 300-400
+
+  functional_boolean:
+    mixin: true
+    description: Grouping slot for boolean slots (all_of, any_of, exactly_one_of, none_of)
+    rank: 1000
 
 # ==================================
 # Classes                          #
@@ -2880,6 +2978,7 @@ classes:
       - SpecificationSubset
 
   structured_alias:
+
     description: >-
       object that contains meta data about a synonym or alias including where it came from (source)
       and its scope (narrow, broad, etc.)
