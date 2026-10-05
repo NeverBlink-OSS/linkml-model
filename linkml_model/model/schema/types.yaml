@@ -173,6 +173,7 @@ types:
       String with optional localization variants. Either a plain, non-langauge-tagged string or a multi-language mapping with at least one value.
       In JSON, plain strings should be mapped to JSON strings, and multi-language strings should be represented as a dictionary object of a language tag to a value in that language.
       In RDF, plain strings should be mapped to xsd:string, and multi-language strings to rdf:langString.
+      In multivalued slots, each value is a separate langstring, so plain strings and multi-language mappings may be mixed in one list.
 
   objectidentifier:
     uri: shex:iri

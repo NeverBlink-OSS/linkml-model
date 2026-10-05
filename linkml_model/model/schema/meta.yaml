@@ -216,7 +216,7 @@ slots:
     description: >-
       Keywords or tags used to describe the element
     slot_uri: schema:keywords
-    range: string
+    range: langstring
     multivalued: true
     in_subset:
       - BasicSubset
@@ -296,7 +296,7 @@ slots:
       to support search and alignment.
     comments:
       - not be confused with the metaslot alias.
-    range: string
+    range: langstring
     multivalued: true
     slot_uri: skos:altLabel
     exact_mappings:
@@ -306,7 +306,7 @@ slots:
 
   deprecated:
     domain: element
-    range: string
+    range: langstring
     description: >-
       Description of why and when this element will no longer be used
     comments:
@@ -327,6 +327,7 @@ slots:
   notes:
     domain: element
     multivalued: true
+    range: langstring
     description: editorial notes about an element intended primarily for internal consumption
     slot_uri: skos:editorialNote
     in_subset:
@@ -335,6 +336,7 @@ slots:
   comments:
     domain: element
     multivalued: true
+    range: langstring
     description: notes and comments about an element intended primarily for external consumption
     slot_uri: skos:note
     exact_mappings:
@@ -2315,7 +2317,7 @@ slots:
   # -----------------------------------
   alt_description_text:
     domain: alt_description
-    range: string
+    range: langstring
     required: true
     description: text of an attributed description
     alias: description
@@ -2356,6 +2358,7 @@ slots:
     domain: example
     alias: description
     description: description of what the value is doing
+    range: langstring
     in_subset:
       - BasicSubset
 
@@ -2485,7 +2488,7 @@ slots:
 
   local_name_value:
     domain: local_name
-    range: string
+    range: langstring
     required: true
     description: a name assigned to an element in a given ontology
     slot_uri: skos:altLabel
