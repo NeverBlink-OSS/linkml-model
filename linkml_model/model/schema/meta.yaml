@@ -174,6 +174,7 @@ slots:
       - BasicSubset
 
   conforms_to:
+    rank: 99
     domain: element
     description: An established standard to which the element conforms.
     slot_uri: dcterms:conformsTo
@@ -183,6 +184,7 @@ slots:
       - linkml:implements
 
   implements:
+    rank: 99
     domain: element
     range: uriorcurie
     description: >-
@@ -192,6 +194,7 @@ slots:
     multivalued: true
 
   instantiates:
+    rank: 99
     domain: element
     range: uriorcurie
     description: >-
@@ -199,6 +202,7 @@ slots:
     multivalued: true
 
   categories:
+    rank: 99
     range: uriorcurie
     singular_name: category
     slot_uri: dcterms:subject
@@ -211,6 +215,7 @@ slots:
       - BasicSubset
 
   keywords:
+    rank: 99
     domain: element
     singular_name: keyword
     description: >-
@@ -222,6 +227,7 @@ slots:
       - BasicSubset
 
   definition_uri:
+    rank: 99
     domain: element
     description: >-
       The native URI of the element. This is always within the namespace of the containing schema.
@@ -235,6 +241,7 @@ slots:
       - linkml:slot_uri
 
   id_prefixes:
+    rank: 199
     domain: element
     multivalued: true
     range: ncname
@@ -251,6 +258,7 @@ slots:
       - BasicSubset
 
   id_prefixes_are_closed:
+    rank: 199
     domain: element
     range: boolean
     description: >-
@@ -275,6 +283,7 @@ slots:
       - BasicSubset
 
   structured_aliases:
+    rank: 99
     slot_uri: skosxl:altLabel
     range: structured_alias
     multivalued: true
@@ -285,6 +294,7 @@ slots:
       - linkml:aliases
 
   aliases:
+    rank: 99
     aliases:
       - synonyms
       - alternate names
@@ -305,6 +315,7 @@ slots:
       - BasicSubset
 
   deprecated:
+    rank: 99
     domain: element
     range: langstring
     description: >-
@@ -317,6 +328,7 @@ slots:
       - BasicSubset
 
   todos:
+    rank: 99
     domain: element
     range: string
     description: Outstanding issues that needs resolution
@@ -325,6 +337,7 @@ slots:
       - BasicSubset
 
   notes:
+    rank: 99
     domain: element
     multivalued: true
     range: langstring
@@ -334,6 +347,7 @@ slots:
       - BasicSubset
 
   comments:
+    rank: 99
     domain: element
     multivalued: true
     range: langstring
@@ -345,6 +359,7 @@ slots:
       - BasicSubset
 
   in_subset:
+    rank: 199
     domain: element
     multivalued: true
     range: subset_definition
@@ -358,6 +373,7 @@ slots:
       - BasicSubset
 
   from_schema:
+    rank: 99
     domain: element
     range: uri
     readonly: supplied by the schema loader or schema view
@@ -369,6 +385,7 @@ slots:
       - SpecificationSubset
 
   imported_from:
+    rank: 99
     domain: element
     range: string
     readonly: supplied by the schema loader or schema view
@@ -376,6 +393,7 @@ slots:
       the imports entry that this element was derived from.  Empty means primary source
 
   see_also:
+    rank: 99
     domain: element
     multivalued: true
     range: uriorcurie
@@ -397,6 +415,7 @@ slots:
       - BasicSubset
 
   created_by:
+    rank: 99
     domain: element
     range: uriorcurie
     description: agent that created the element
@@ -405,6 +424,7 @@ slots:
       - BasicSubset
 
   contributors:
+    rank: 99
     domain: element
     range: uriorcurie
     description: agent that contributed to the element
@@ -414,6 +434,7 @@ slots:
       - BasicSubset
 
   created_on:
+    rank: 99
     domain: element
     range: datetime
     description: time at which the element was created
@@ -422,6 +443,7 @@ slots:
       - BasicSubset
 
   last_updated_on:
+    rank: 99
     domain: element
     range: datetime
     description: time at which the element was last updated
@@ -430,6 +452,7 @@ slots:
       - BasicSubset
 
   modified_by:
+    rank: 99
     domain: element
     range: uriorcurie
     description: agent that modified the element
@@ -438,6 +461,7 @@ slots:
       - BasicSubset
 
   status:
+    rank: 99
     aliases:
       - workflow status
     domain: element
@@ -481,6 +505,7 @@ slots:
       The context in which an alias should be applied
 
   in_language:
+    rank: 99
     slot_uri: schema:inLanguage
     range: string
     description: >-
@@ -490,6 +515,7 @@ slots:
     conforms_to: https://www.rfc-editor.org/rfc/bcp/bcp47.txt
 
   source:
+    rank: 99
     aliases:
       - origin
       - derived from
@@ -534,6 +560,7 @@ slots:
       - OwlProfile
 
   abstract:
+    rank: 199
     domain: definition
     range: boolean
     description: >-
@@ -544,6 +571,7 @@ slots:
       - ObjectOrientedProfile
 
   mixin:
+    rank: 199
     aliases:
       - trait
     domain: definition
@@ -576,6 +604,7 @@ slots:
       - OwlProfile
 
   apply_to:
+    rank: 99
     domain: definition
     multivalued: true
     range: definition
@@ -587,6 +616,7 @@ slots:
     status: testing
 
   values_from:
+    rank: 199
     domain: definition
     multivalued: true
     range: uriorcurie
@@ -603,6 +633,7 @@ slots:
   # Enum definition slots
   # -----------------------------------
   code_set:
+    rank: 99
     domain: enum_expression
     range: uriorcurie
     description: >-
@@ -612,6 +643,7 @@ slots:
       - BasicSubset
 
   code_set_version:
+    rank: 99
     domain: enum_expression
     range: string
     description: >-
@@ -622,6 +654,7 @@ slots:
       - BasicSubset
 
   code_set_tag:
+    rank: 99
     domain: enum_expression
     range: string
     description: >-
@@ -632,6 +665,7 @@ slots:
       - BasicSubset
 
   pv_formula:
+    rank: 299
     range: pv_formula_options
     description: >-
       Defines the specific formula to be used to generate the permissible values.
@@ -643,6 +677,7 @@ slots:
       - BasicSubset
 
   permissible_values:
+    rank: 201
     aliases:
       - coded values
     domain: enum_expression
@@ -658,6 +693,7 @@ slots:
       - cdisc:PermissibleValue
 
   enum_uri:
+    rank: 199
     aliases:
       - public ID
     domain: enum_definition
@@ -669,6 +705,7 @@ slots:
       - BasicSubset
 
   include:
+    rank: 299
     description: An enum expression that yields a list of permissible values that are to be included, after subtracting the minus set
     domain: enum_expression
     range: anonymous_enum_expression
@@ -677,6 +714,7 @@ slots:
       - SpecificationSubset
 
   minus:
+    rank: 203
     description: An enum expression that yields a list of permissible values that are to be subtracted from the enum
     domain: enum_expression
     range: anonymous_enum_expression
@@ -685,6 +723,7 @@ slots:
       - SpecificationSubset
 
   inherits:
+    rank: 202
     description: An enum definition that is used as the basis to create a new enum
     comments:
       - All permissible values for all inherited enums are copied to form the initial seed set
@@ -695,6 +734,7 @@ slots:
       - SpecificationSubset
 
   matches:
+    rank: 299
     description: Specifies a match query that is used to calculate the list of permissible values
     domain: enum_expression
     range: match_query
@@ -709,6 +749,7 @@ slots:
       - SpecificationSubset
 
   concepts:
+    rank: 204
     description: A list of identifiers that are used to construct a set of permissible values
     domain: enum_expression
     range: uriorcurie
@@ -717,6 +758,7 @@ slots:
       - SpecificationSubset
 
   reachable_from:
+    rank: 205
     description: Specifies a query for obtaining a list of permissible values based on graph reachability
     domain: enum_expression
     range: reachability_query
@@ -833,6 +875,7 @@ slots:
       - OwlProfile
 
   emit_prefixes:
+    rank: 199
     domain: schema_definition
     multivalued: true
     range: ncname
@@ -841,6 +884,7 @@ slots:
         this list are added to the prefix sections of the target models.
 
   version:
+    rank: 99
     domain: schema_definition
     description: particular version of schema
     slot_uri: pav:version
@@ -877,6 +921,7 @@ slots:
       - BasicSubset
 
   default_curi_maps:
+    rank: 199
     domain: schema_definition
     multivalued: true
     description: ordered list of prefixcommon biocontexts to be fetched to resolve id prefixes and inline prefix variables
@@ -906,7 +951,7 @@ slots:
       - BasicSubset
 
   subsets:
-    rank: 8
+    rank: 205
     domain: schema_definition
     multivalued: true
     range: subset_definition
@@ -919,7 +964,7 @@ slots:
       - BasicSubset
 
   types:
-    rank: 6
+    rank: 203
     domain: schema_definition
     range: type_definition
     multivalued: true
@@ -931,7 +976,7 @@ slots:
       - OwlProfile
 
   enums:
-    rank: 5
+    rank: 202
     domain: schema_definition
     range: enum_definition
     multivalued: true
@@ -944,7 +989,7 @@ slots:
       - OwlProfile
 
   slot_definitions:
-    rank: 4
+    rank: 204
     domain: schema_definition
     multivalued: true
     range: slot_definition
@@ -959,7 +1004,7 @@ slots:
       - OwlProfile
 
   classes:
-    rank: 3
+    rank: 201
     domain: schema_definition
     range: class_definition
     multivalued: true
@@ -974,6 +1019,7 @@ slots:
       - OwlProfile
 
   metamodel_version:
+    rank: 199
     domain: schema_definition
     readonly: supplied by the schema loader or schema view
     description: Version of the metamodel used to load the schema
@@ -981,6 +1027,7 @@ slots:
       - BasicSubset
 
   source_file:
+    rank: 99
     domain: schema_definition
     readonly: supplied by the schema loader
     description: name, uri or description of the source of the schema
@@ -988,6 +1035,7 @@ slots:
       - BasicSubset
 
   source_file_date:
+    rank: 99
     domain: schema_definition
     range: datetime
     readonly: supplied by the loader
@@ -996,6 +1044,7 @@ slots:
       - BasicSubset
 
   source_file_size:
+    rank: 99
     domain: schema_definition
     range: integer
     readonly: supplied by the schema loader or schema view
@@ -1004,6 +1053,7 @@ slots:
       - BasicSubset
 
   generation_date:
+    rank: 99
     domain: schema_definition
     range: datetime
     readonly: supplied by the schema loader or schema view
@@ -1016,7 +1066,7 @@ slots:
   # Class definition slots
   # -----------------------------------
   slots:
-    rank: 19
+    rank: 201
     domain: class_definition
     multivalued: true
     range: slot_definition
@@ -1032,7 +1082,7 @@ slots:
       - BasicSubset
 
   slot_usage:
-    rank: 23
+    rank: 202
     domain: class_definition
     multivalued: true
     range: slot_definition
@@ -1049,6 +1099,7 @@ slots:
       - BasicSubset
 
   enum_range:
+    rank: 199
     range: enum_expression
     description: An inlined enumeration
     in_subset:
@@ -1056,6 +1107,7 @@ slots:
     status: testing
 
   range_expression:
+    rank: 199
     domain: slot_expression
     range: anonymous_class_expression
     description: A range that is described as a boolean expression combining existing ranges
@@ -1072,7 +1124,7 @@ slots:
     description: A grouping of slots that expression a boolean operator over a list of operands
 
   any_of:
-    rank: 101
+    rank: 301
     description: holds if at least one of the expressions hold
     is_a: boolean_slot
     range: expression
@@ -1084,7 +1136,7 @@ slots:
       - "https://w3id.org/linkml/docs/specification/05validation/#rules"
 
   exactly_one_of:
-    rank: 103
+    rank: 303
     description: holds if only one of the expressions hold
     is_a: boolean_slot
     range: expression
@@ -1096,7 +1148,7 @@ slots:
       - "https://w3id.org/linkml/docs/specification/05validation/#rules"
 
   none_of:
-    rank: 105
+    rank: 305
     description: holds if none of the expressions hold
     is_a: boolean_slot
     range: expression
@@ -1108,7 +1160,7 @@ slots:
       - "https://w3id.org/linkml/docs/specification/05validation/#rules"
 
   all_of:
-    rank: 107
+    rank: 307
     description: holds if all of the expressions hold
     is_a: boolean_slot
     range: expression
@@ -1204,6 +1256,7 @@ slots:
     range: boolean
 
   rules:
+    rank: 199
     slot_uri: sh:rule
     domain: class_definition
     multivalued: true
@@ -1214,6 +1267,7 @@ slots:
       - SpecificationSubset
 
   classification_rules:
+    rank: 199
     domain: class_definition
     multivalued: true
     range: anonymous_class_expression
@@ -1225,6 +1279,7 @@ slots:
       - SpecificationSubset
 
   slot_conditions:
+    rank: 199
     domain: class_expression
     multivalued: true
     range: slot_definition
@@ -1234,7 +1289,7 @@ slots:
       - SpecificationSubset
 
   attributes:
-    rank: 29
+    rank: 203
     domain: class_definition
     multivalued: true
     range: slot_definition
@@ -1271,6 +1326,7 @@ slots:
       - https://linkml.io/linkml/schemas/uris-and-mappings.html
 
   subclass_of:
+    rank: 399
     domain: class_definition
     range: uriorcurie
     description: DEPRECATED -- rdfs:subClassOf to be emitted in OWL generation
@@ -1279,6 +1335,7 @@ slots:
     deprecated: Use is_a instead
 
   defining_slots:
+    rank: 99
     domain: class_definition
     range: slot_definition
     multivalued: true
@@ -1288,6 +1345,7 @@ slots:
       necessary and sufficient conditions that can be transformed into an OWL equivalence axiom
 
   union_of:
+    rank: 199
     domain: element
     range: element
     multivalued: true
@@ -1313,6 +1371,7 @@ slots:
       - https://linkml.io/linkml/intro/tutorial02.html
 
   unique_keys:
+    rank: 199
     domain: class_definition
     range: unique_key
     multivalued: true
@@ -1366,12 +1425,14 @@ slots:
       - RelationalModelProfile
 
   slot_names_unique:
+    rank: 199
     domain: definition
     range: boolean
     description: if true then induced/mangled slot names are not created for class_usage and attributes
     status: testing
 
   extra_slots:
+    rank: 199
     description: |
       How a class instance handles extra data not specified in the class definition.
       Note that this does *not* define the constraints that are placed on additional slots defined by inheriting classes.
@@ -1441,6 +1502,7 @@ slots:
   # Slot definition slots
   # -----------------------------------
   domain:
+    rank: 199
     domain: slot_definition
     range: class_definition
     inherited: true
@@ -1458,6 +1520,7 @@ slots:
       - SpecificationSubset
 
   range:
+    rank: 199
     aliases:
       - value domain
     domain: slot_definition
@@ -1517,6 +1580,7 @@ slots:
       - ObjectOrientedProfile
 
   array:
+    rank: 199
     domain: slot_definition
     range: array_expression
     inherited: true
@@ -1567,6 +1631,7 @@ slots:
       - if exact_number_dimensions is set, then minimum_number_dimensions and maximum_number_dimensions must be unset or have the same value
 
   inherited:
+    rank: 199
     domain: slot_definition
     range: boolean
     inherited: true
@@ -1578,6 +1643,7 @@ slots:
       - SpecificationSubset
 
   readonly:
+    rank: 199
     domain: slot_definition
     range: string
     inherited: true
@@ -1586,6 +1652,7 @@ slots:
       - the slot is to be used for defining *metamodels* only
 
   ifabsent:
+    rank: 199
     domain: slot_definition
     range: string
     inherited: true
@@ -1611,6 +1678,7 @@ slots:
       - linkml:equals_expression
 
   implicit_prefix:
+    rank: 199
     domain: slot_expression
     range: string
     description: >-
@@ -1630,6 +1698,7 @@ slots:
     status: testing
 
   value_presence:
+    rank: 199
     is_a: list_value_specification_constant
     domain: slot_definition
     range: presence_enum
@@ -1640,6 +1709,7 @@ slots:
     status: unstable
 
   equals_string:
+    rank: 199
     is_a: list_value_specification_constant
     range: string
     inherited: true
@@ -1648,6 +1718,7 @@ slots:
       - SpecificationSubset
 
   equals_number:
+    rank: 199
     is_a: list_value_specification_constant
     range: integer  ## todo, make the range a union
     inherited: true
@@ -1655,6 +1726,7 @@ slots:
     status: unstable
 
   equals_expression:
+    rank: 199
     is_a: list_value_specification_constant
     range: string
     inherited: true
@@ -1668,6 +1740,7 @@ slots:
       - SpecificationSubset
 
   exact_cardinality:
+    rank: 199
     is_a: list_value_specification_constant
     range: integer
     inherited: true
@@ -1678,6 +1751,7 @@ slots:
       - if exact_cardinality is set, then minimum_cardinalty and maximum_cardinality must be unset or have the same value
 
   minimum_cardinality:
+    rank: 199
     is_a: list_value_specification_constant
     range: integer
     inherited: true
@@ -1689,6 +1763,7 @@ slots:
       - minimum_cardinality cannot be greater than maximum_cardinality
 
   maximum_cardinality:
+    rank: 199
     is_a: list_value_specification_constant
     range: integer
     inherited: true
@@ -1700,6 +1775,7 @@ slots:
     # minimum_value: 0
 
   equals_string_in:
+    rank: 199
     is_a: list_value_specification_constant
     range: string
     multivalued: true
@@ -1720,6 +1796,7 @@ slots:
       - SpecificationSubset
 
   has_member:
+    rank: 199
     is_a: list_value_specification_constant
     range: anonymous_slot_expression
     description: the value of the slot is multivalued with at least one member satisfying the condition
@@ -1728,6 +1805,7 @@ slots:
       - SpecificationSubset
 
   all_members:
+    rank: 199
     is_a: list_value_specification_constant
     range: anonymous_slot_expression
     description: the value of the slot is multivalued with all members satisfying the condition
@@ -1736,6 +1814,7 @@ slots:
       - SpecificationSubset
 
   singular_name:
+    rank: 99
     domain: slot_definition
     description: a name that is used in the singular form
     comments:
@@ -1838,6 +1917,7 @@ slots:
     status: testing
 
   list_elements_ordered:
+    rank: 199
     domain: slot_definition
     range: boolean
     inherited: true
@@ -1851,6 +1931,7 @@ slots:
     status: testing
 
   list_elements_unique:
+    rank: 199
     domain: slot_definition
     range: boolean
     inherited: true
@@ -1862,6 +1943,7 @@ slots:
       - SpecificationSubset
 
   shared:
+    rank: 199
     aliases:
       - inverse functional
       - many to one or many
@@ -1874,6 +1956,7 @@ slots:
       - SpecificationSubset
 
   key:
+    rank: 199
     domain: slot_definition
     range: boolean
     inherited: true
@@ -1931,6 +2014,7 @@ slots:
       - RelationalModelProfile
 
   designates_type:
+    rank: 199
     aliases:
       - type designator
     domain: slot_definition
@@ -1958,6 +2042,7 @@ slots:
       - SpecificationSubset
 
   owner:
+    rank: 399
     domain: slot_definition
     range: definition
     description: >-
@@ -1966,6 +2051,7 @@ slots:
     deprecated: Will be replaced by domain_of and eventually removed
 
   domain_of:
+    rank: 199
     domain: slot_definition
     range: class_definition
     description: the class(es) that reference the slot in a "slots" or "slot_usage" context
@@ -1976,6 +2062,7 @@ slots:
       - SIO:000011
 
   is_usage_slot:
+    rank: 399
     domain: slot_definition
     deprecated: Replaced by usage_slot_name
     range: boolean
@@ -1983,12 +2070,14 @@ slots:
     readonly: filled in by the loader
 
   usage_slot_name:
+    rank: 199
     domain: slot_definition
     range: string
     description: The name of the slot referenced in the slot_usage
     readonly: filled in by the loader
 
   subproperty_of:
+    rank: 199
     domain: slot_definition
     range: slot_definition
     description: >-
@@ -2006,6 +2095,7 @@ slots:
     slot_uri: rdfs:subPropertyOf
 
   disjoint_with:
+    rank: 199
     domain: definition
     range: definition
     multivalued: true
@@ -2014,6 +2104,7 @@ slots:
       - SpecificationSubset
 
   children_are_mutually_disjoint:
+    rank: 199
     domain: definition
     range: boolean
     description: If true then all direct is_a children are mutually disjoint and share no instances in common
@@ -2025,6 +2116,7 @@ slots:
     description: An abstract grouping for metaslots that describe logical properties of a slot
 
   symmetric:
+    rank: 199
     is_a: relational_logical_characteristic
     description: If s is symmetric, and i.s=v, then v.s=i
     close_mappings:
@@ -2033,6 +2125,7 @@ slots:
       - SpecificationSubset
 
   asymmetric:
+    rank: 199
     is_a: relational_logical_characteristic
     description: If s is antisymmetric, and i.s=v where i is different from v, v.s cannot have value i
     comments:
@@ -2043,6 +2136,7 @@ slots:
       - SpecificationSubset
 
   reflexive:
+    rank: 199
     is_a: relational_logical_characteristic
     description: If s is reflexive, then i.s=i for all instances i
     comments:
@@ -2053,6 +2147,7 @@ slots:
       - SpecificationSubset
 
   irreflexive:
+    rank: 199
     is_a: relational_logical_characteristic
     description: If s is irreflexive, then there exists no i such i.s=i
     close_mappings:
@@ -2061,12 +2156,14 @@ slots:
       - SpecificationSubset
 
   locally_reflexive:
+    rank: 199
     is_a: relational_logical_characteristic
     description: If s is locally_reflexive, then i.s=i for all instances i where s is a class slot for the type of i
     in_subset:
       - SpecificationSubset
 
   transitive:
+    rank: 199
     is_a: relational_logical_characteristic
     description: If s is transitive, and i.s=z, and s.s=j, then i.s=j
     close_mappings:
@@ -2075,6 +2172,7 @@ slots:
       - SpecificationSubset
 
   transitive_form_of:
+    rank: 199
     range: slot_definition
     description: If s transitive_form_of d, then (1) s holds whenever d holds (2) s is transitive (3) d holds whenever s holds and there are no intermediates, and s is not reflexive
     comments:
@@ -2083,12 +2181,14 @@ slots:
       - SpecificationSubset
 
   reflexive_transitive_form_of:
+    rank: 199
     is_a: transitive_form_of
     description: transitive_form_of including the reflexive case
     in_subset:
       - SpecificationSubset
 
   inverse:
+    rank: 199
     domain: slot_definition
     range: slot_definition
     description: indicates that any instance of d s r implies that there is also an instance of r s' d
@@ -2097,11 +2197,13 @@ slots:
       - SpecificationSubset
 
   is_class_field:
+    rank: 199
     domain: slot_definition
     range: boolean
     description: indicates that for any instance, i, the domain of this slot will include an assertion of i s range
 
   role:
+    rank: 99
     domain: slot_definition
     range: string
     description: a textual descriptor that indicates the role played by the slot range
@@ -2110,6 +2212,7 @@ slots:
     inherited: true
 
   minimum_value:
+    rank: 199
     aliases:
       - low value
     domain: slot_definition
@@ -2123,6 +2226,7 @@ slots:
       - BasicSubset
 
   maximum_value:
+    rank: 199
     aliases:
       - high value
     domain: slot_definition
@@ -2168,6 +2272,7 @@ slots:
       - SpecificationSubset
 
   structured_pattern:
+    rank: 199
     domain: definition
     range: pattern_expression
     description: the string value of the slot must conform to the regular expression in the pattern expression
@@ -2178,6 +2283,7 @@ slots:
       - https://linkml.io/linkml/schemas/constraints.html#structured-patterns
 
   string_serialization:
+    rank: 199
     domain: definition
     range: string
     description: >-
@@ -2202,6 +2308,7 @@ slots:
       - SpecificationSubset
 
   bindings:
+    rank: 199
     domain: element
     range: enum_binding
     multivalued: true
@@ -2238,6 +2345,7 @@ slots:
       - SpecificationSubset
 
   type_mappings:
+    rank: 199
     range: type_mapping
     description: >-
       A collection of type mappings that specify how a slot's range should be mapped or
@@ -2334,6 +2442,7 @@ slots:
       - BasicSubset
 
   alt_descriptions:
+    rank: 99
     aliases:
       - alternate definitions
     domain: element
@@ -2371,6 +2480,7 @@ slots:
       - BasicSubset
 
   examples:
+    rank: 99
     singular_name: example
     domain: element
     multivalued: true
@@ -2494,12 +2604,14 @@ slots:
     slot_uri: skos:altLabel
 
   local_names:
+    rank: 99
     domain: element
     range: local_name
     multivalued: true
     inlined: true
 
   slot_group:
+    rank: 99
     domain: slot_definition
     range: slot_definition
     description: allows for grouping of related slots into a grouping slot that serves the role of a group
@@ -2515,6 +2627,7 @@ slots:
       - BasicSubset
 
   is_grouping_slot:
+    rank: 199
     domain: slot_definition
     range: boolean
     description: true if this slot is a grouping slot
@@ -2536,6 +2649,7 @@ slots:
     description: the slot to traverse
     range: slot_definition
   path_rule:
+    rank: 199
     description: a rule for inferring a slot assignment based on evaluating a path through a sequence of slot assignments
     domain: slot_definition
     range: path_expression
@@ -2544,6 +2658,7 @@ slots:
   # Relational Roles
   # -----------------------------------
   represents_relationship:
+    rank: 199
     aliases:
       - is_reified
     description: true if this class represents a relationship rather than an entity
@@ -2560,6 +2675,7 @@ slots:
       - in the context of property graphs, this should be used when a class is used to represent an edge that connects nodes
 
   relational_role:
+    rank: 199
     aliases:
       - reification_role
     description: the role a slot on a relationship class plays, for example, the subject, object or predicate roles
