@@ -18,6 +18,7 @@ imports:
 
 slots:
   extensions:
+    rank: 199
     domain: extensible
     range: extension
     description: a tag/text tuple attached to an arbitrary element
