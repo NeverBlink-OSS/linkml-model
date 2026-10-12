@@ -32,6 +32,7 @@ imports:
 
 slots:
   mappings:
+    rank: 99
     aliases:
       - xrefs
       - identifiers
@@ -96,6 +97,7 @@ slots:
     slot_uri: skos:broadMatch
 
   deprecated_element_has_exact_replacement:
+    rank: 99
     range: uriorcurie
     title: deprecated element has exact replacement
     description: >-
@@ -104,6 +106,7 @@ slots:
       - IAO:0100001
 
   deprecated_element_has_possible_replacement:
+    rank: 99
     range: uriorcurie
     title: deprecated element has possible replacement
     description: >-

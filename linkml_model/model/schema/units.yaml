@@ -23,6 +23,7 @@ imports:
 slots:
 
   unit:
+    rank: 99
     slot_uri: qudt:unit
     description: an encoding of a unit
     range: UnitOfMeasure
