@@ -1,5 +1,4 @@
 # Auto generated from extensions.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-12T09:42:10
 # Schema: extensions
 #
 # id: https://w3id.org/linkml/extensions
@@ -54,7 +53,7 @@ from rdflib import (
 from .types import Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE
 
-metamodel_version = "1.11.0"
+metamodel_version = "1.12.0"
 version = "2.0.0"
 
 # Namespaces

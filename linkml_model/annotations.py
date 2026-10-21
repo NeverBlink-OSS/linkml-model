@@ -1,5 +1,4 @@
 # Auto generated from annotations.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-12T09:42:07
 # Schema: annotations
 #
 # id: https://w3id.org/linkml/annotations
@@ -55,7 +54,7 @@ from .extensions import AnyValue, Extension, ExtensionTag
 from .types import Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE
 
-metamodel_version = "1.11.0"
+metamodel_version = "1.12.0"
 version = "2.0.0"
 
 # Namespaces
