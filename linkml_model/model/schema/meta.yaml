@@ -2271,6 +2271,8 @@ slots:
     minimum_value: 0
     description: >-
       the string value must contain at least this many characters (Unicode code-points).
+    comments:
+      - For binary values (like base64Binary), this restriction should measure the number of octets instead.
 
   maximum_length:
     rank: 37
@@ -2278,6 +2280,8 @@ slots:
     minimum_value: 0
     description: >-
       the string value must contain at most this many characters (Unicode code-points).
+    comments:
+      - For binary values (like base64Binary), this restriction should measure the number of octets instead.
 
   syntax:
     domain: pattern_expression
