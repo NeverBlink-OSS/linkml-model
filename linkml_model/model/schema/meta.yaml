@@ -165,7 +165,7 @@ slots:
     aliases:
       - long name
     domain: element
-    range: langString
+    range: langstring
     description: >-
       A concise human-readable display label for the element. The title should mirror the name,
       and should use ordinary textual punctuation.
@@ -221,7 +221,7 @@ slots:
     description: >-
       Keywords or tags used to describe the element
     slot_uri: schema:keywords
-    range: langString
+    range: langstring
     multivalued: true
     in_subset:
       - BasicSubset
@@ -271,7 +271,7 @@ slots:
     aliases:
       - definition
     domain: element
-    range: langString
+    range: langstring
     description: >-
       a textual description of the element's purpose and use
     slot_uri: skos:definition
@@ -306,7 +306,7 @@ slots:
       to support search and alignment.
     comments:
       - not be confused with the metaslot alias.
-    range: langString
+    range: langstring
     multivalued: true
     slot_uri: skos:altLabel
     exact_mappings:
@@ -317,7 +317,7 @@ slots:
   deprecated:
     rank: 99
     domain: element
-    range: langString
+    range: langstring
     description: >-
       Description of why and when this element will no longer be used
     comments:
@@ -340,7 +340,7 @@ slots:
     rank: 99
     domain: element
     multivalued: true
-    range: langString
+    range: langstring
     description: editorial notes about an element intended primarily for internal consumption
     slot_uri: skos:editorialNote
     in_subset:
@@ -350,7 +350,7 @@ slots:
     rank: 99
     domain: element
     multivalued: true
-    range: langString
+    range: langstring
     description: notes and comments about an element intended primarily for external consumption
     slot_uri: skos:note
     exact_mappings:
@@ -2445,7 +2445,7 @@ slots:
   # -----------------------------------
   alt_description_text:
     domain: alt_description
-    range: langString
+    range: langstring
     required: true
     description: text of an attributed description
     alias: description
@@ -2487,7 +2487,7 @@ slots:
     domain: example
     alias: description
     description: description of what the value is doing
-    range: langString
+    range: langstring
     in_subset:
       - BasicSubset
 
@@ -2618,7 +2618,7 @@ slots:
 
   local_name_value:
     domain: local_name
-    range: langString
+    range: langstring
     required: true
     description: a name assigned to an element in a given ontology
     slot_uri: skos:altLabel
