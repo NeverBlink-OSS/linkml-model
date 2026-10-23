@@ -44,7 +44,8 @@ jobs:
           git fetch upstream --tags
       - name: Validate the metamodel using LinkML-Scala
         uses: NeverBlink-OSS/linkml-scala-action@v0.17.1
-        working-directory: linkml_model/model/schema
-        files: "*.yaml"
-        import-map: "import_map.json"
-        strict: true
+        with:
+          working-directory: linkml_model/model/schema
+          files: "*.yaml"
+          import-map: "import_map.json"
+          strict: true
