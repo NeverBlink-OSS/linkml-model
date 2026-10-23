@@ -28,13 +28,7 @@ jobs:
           extra_args: --all-files
 
   test:
-    needs: quality-checks
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        python-version: ["3.10", "3.13"]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
@@ -47,4 +41,15 @@ jobs:
         run: |
           git remote add upstream https://github.com/linkml/linkml-model
           git fetch upstream --tags
-      # TODO LNK-241: Use linkml-scala validate
+      - name: Validate all metamodel files
+        uses: NeverBlink-OSS/linkml-scala-action@v0.17.1
+        with:
+          working-directory: linkml_model/model/schema
+          files: "*.yaml"
+          import-map: "import_map.json"
+      - name: Lint the main metamodel file
+        uses: NeverBlink-OSS/linkml-scala-action@v0.17.1
+        with:
+          working-directory: linkml_model/model/schema
+          files: "meta.yaml"
+          import-map: "import_map.json"
