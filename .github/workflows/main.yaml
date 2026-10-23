@@ -28,7 +28,6 @@ jobs:
           extra_args: --all-files
 
   test:
-    needs: quality-checks
     runs-on: ubuntu-latest
     defaults:
       run:
