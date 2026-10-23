@@ -165,7 +165,7 @@ types:
     notes: >-
       If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "ncname".
 
-  langString:
+  langstring:
     uri: linkml:LocalizedText
     base: LocalizedText
     repr: str # TODO for LinkML-Py maintainers: change this
