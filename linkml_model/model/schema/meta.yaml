@@ -2721,7 +2721,7 @@ slots:
   # Function definition slots
   # -----------------------------------
   functions:
-    rank: 6
+    rank: 206
     domain: schema_definition
     range: function_definition
     multivalued: true
