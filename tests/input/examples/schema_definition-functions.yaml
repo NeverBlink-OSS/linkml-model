@@ -1,0 +1,61 @@
+id: https://example.org/functions
+name: functions-example
+title: Functions Example
+description: |-
+  Example LinkML schema to demonstrate functions: a function takes the slots of one class as its
+  parameters and returns another class.
+license: MIT
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  example: https://example.org/
+
+default_prefix: example
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+
+  GreetRequest:
+    description: Parameters of the greet function.
+    attributes:
+      name:
+        description: Who is being greeted.
+        required: true
+      times:
+        description: How many times to repeat the greeting.
+        range: integer
+        minimum_value: 1
+        ifabsent: int(1)
+
+  Greeting:
+    description: A rendered greeting.
+    attributes:
+      text:
+        description: The greeting itself.
+        required: true
+
+  UnknownLanguage:
+    description: No greeting template exists for the requested language.
+    attributes:
+      language:
+        description: The language that was asked for.
+        required: true
+
+functions:
+
+  greet:
+    description: Builds a greeting for one person.
+    parameters: GreetRequest
+    returns: Greeting
+    errors:
+      - UnknownLanguage
+
+  reload_templates:
+    description: Rereads the greeting templates. Takes no parameters and returns nothing.
+
+  count_greetings:
+    description: Returns how many greetings have been issued so far, as a bare integer.
+    returns: integer
