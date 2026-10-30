@@ -707,6 +707,17 @@
 
       SchemaDefinition : from_schema
 
+      SchemaDefinition : functions
+
+
+
+
+
+        SchemaDefinition --&gt; "*" FunctionDefinition : functions
+        click FunctionDefinition href "../FunctionDefinition/"
+
+
+
       SchemaDefinition : generation_date
 
       SchemaDefinition : id
@@ -999,6 +1010,12 @@
 <td><a href="../classes/">classes</a></td>
 <td>* <br/> <a href="../ClassDefinition/">ClassDefinition</a></td>
 <td>An index to the collection of all class definitions in the schema</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../functions/">functions</a></td>
+<td>* <br/> <a href="../FunctionDefinition/">FunctionDefinition</a></td>
+<td>The functions defined in the schema</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -1406,6 +1423,12 @@
 </tr>
 <tr>
 <td><a href="./">SchemaDefinition</a></td>
+<td><a href="../functions/">functions</a></td>
+<td>domain</td>
+<td><a href="./">SchemaDefinition</a></td>
+</tr>
+<tr>
+<td><a href="./">SchemaDefinition</a></td>
 <td><a href="../metamodel_version/">metamodel_version</a></td>
 <td>domain</td>
 <td><a href="./">SchemaDefinition</a></td>
@@ -1537,6 +1560,7 @@ slots:
 - enums
 - slot_definitions
 - classes
+- functions
 - metamodel_version
 - source_file
 - source_file_date
@@ -1808,6 +1832,20 @@ attributes:
     domain_of:
     - schema_definition
     range: class_definition
+    multivalued: true
+    inlined: true
+  functions:
+    name: functions
+    description: The functions defined in the schema
+    in_subset:
+    - FunctionalProfile
+    from_schema: https://w3id.org/linkml/meta
+    rank: 6
+    domain: schema_definition
+    owner: schema_definition
+    domain_of:
+    - schema_definition
+    range: function_definition
     multivalued: true
     inlined: true
   metamodel_version:
