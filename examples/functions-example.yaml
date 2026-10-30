@@ -1,0 +1,165 @@
+id: https://w3id.org/linkml/examples/functions
+title: Functions example
+name: functions
+description: >-
+  Demonstrates `functions`, which describes a functional interface over the classes of a schema.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+see_also:
+  - https://fno.io/spec/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ex: https://w3id.org/linkml/examples/functions/
+
+default_prefix: ex
+default_range: string
+
+imports:
+  - linkml:types
+
+enums:
+  SortOrder:
+    description: How search hits are ordered.
+    permissible_values:
+      relevance:
+        description: Best match first. The default.
+      name:
+        description: Alphabetical by publication name.
+      newest:
+        description: Most recently published first.
+
+classes:
+
+  SearchRequest:
+    description: Parameters of the `search` function.
+    attributes:
+      q:
+        description: Text query over the indexed fields. The wildcard `*` browses everything.
+        required: true
+      page:
+        description: One-based page number.
+        range: integer
+        minimum_value: 1
+        ifabsent: int(1)
+      per_page:
+        description: Hits per page, from 1 through 250.
+        range: integer
+        minimum_value: 1
+        maximum_value: 250
+        ifabsent: int(10)
+      sort_by:
+        description: Ordering of the hits.
+        range: SortOrder
+        ifabsent: SortOrder(relevance)
+
+  SearchResult:
+    description: One page of search hits.
+    attributes:
+      hits:
+        description: Matching publications, in search-result order.
+        range: Publication
+        required: true
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      total:
+        description: Matching publications before pagination.
+        range: integer
+        required: true
+        minimum_value: 0
+      page:
+        description: The page these hits came from.
+        range: integer
+        required: true
+        minimum_value: 1
+
+  FetchRequest:
+    description: Parameters of the `fetch` and `list_versions` functions.
+    attributes:
+      id:
+        description: Identifier of the publication.
+        required: true
+      version:
+        description: Version to fetch. Omitted means the latest.
+
+  Publication:
+    description: One published ontology.
+    attributes:
+      id:
+        description: Identifier of the publication.
+        identifier: true
+      name:
+        description: Human-readable name.
+        required: true
+      version:
+        description: Version of this publication.
+        required: true
+      summary:
+        description: One-paragraph description.
+
+  VersionList:
+    description: >-
+      Every published version of one publication. A class rather than a bare list of strings,
+      so that it can gain a field later without breaking its callers.
+    attributes:
+      publication_id:
+        description: Identifier of the publication the versions belong to.
+        required: true
+      versions:
+        description: Version strings, newest first. Empty when nothing is published yet.
+        required: true
+        multivalued: true
+
+  QueryError:
+    description: The query could not be parsed.
+    attributes:
+      message:
+        description: What is wrong with the query.
+        required: true
+      position:
+        description: Zero-based offset in the query where parsing stopped.
+        range: integer
+        minimum_value: 0
+
+  NotFound:
+    description: No publication matched the request.
+    attributes:
+      id:
+        description: The identifier that was looked up.
+        required: true
+      version:
+        description: The version that was looked up, when one was given.
+
+functions:
+
+  search:
+    description: >-
+      Returns one page of publications matching a query. Hits are ordered by `sort_by`, and
+      `total` counts every match, not only the ones on this page.
+    parameters: SearchRequest
+    returns: SearchResult
+    errors:
+      - QueryError
+
+  fetch:
+    description: Returns one publication by identifier, at the requested version or the latest.
+    parameters: FetchRequest
+    returns: Publication
+    errors:
+      - NotFound
+
+  list_versions:
+    description: Returns every published version of one publication, newest first.
+    parameters: FetchRequest
+    returns: VersionList
+    errors:
+      - NotFound
+
+  reindex:
+    description: Rebuilds the search index from the published ontologies. Returns nothing.
+
+  count_publications:
+    description: >-
+      Returns how many ontologies are published, as a bare integer. A count has nothing to grow
+      into, so it does not get a class of its own.
+    returns: integer

@@ -53,6 +53,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  fno: https://w3id.org/function/ontology#
 
 default_prefix: linkml
 default_range: string
@@ -127,6 +128,13 @@ subsets:
     title: owl profile
     description: |-
       A profile that includes all the metamodel elements whose semantics can be expressed in OWL
+  FunctionalProfile:
+    title: functional profile
+    description: |-
+      A profile that includes the metamodel elements for describing named functions that take the 
+      slots of one class as their parameters and return another class.
+
+      The profile reuses the [Function Ontology](https://fno.io/spec/) where possible.
 
 # ==================================
 # Slots                            #
@@ -2709,6 +2717,60 @@ slots:
       - in the context of property graphs, this should be used on edge classes to indicate which slots represent the input and output nodes
 
 
+  # -----------------------------------
+  # Function definition slots
+  # -----------------------------------
+  functions:
+    rank: 6
+    domain: schema_definition
+    range: function_definition
+    multivalued: true
+    inlined: true
+    description: The functions defined in the schema
+    in_subset:
+      - FunctionalProfile
+
+  parameters:
+    slot_uri: fno:expects
+    domain: function_definition
+    range: class_definition
+    description: The class whose slots are the parameters of the function, in slot order.
+    comments:
+      - a function that takes no parameters has no value for this metaslot
+      - >-
+        A parameter's range, requiredness, cardinality, default value, and constraints are 
+        defined in the metaslots of the slot it comes from.
+    in_subset:
+      - FunctionalProfile
+
+  returns:
+    slot_uri: fno:returns
+    domain: function_definition
+    range: element
+    description: What the function returns when it succeeds, as a class, a type or an enum.
+    comments:
+      - A function that returns nothing (void) has no value for this metaslot.
+      - >-
+        As with a slot's range, this is underspecified, as not every element can be returned.
+        Only classes, types and enums are valid here.
+      - >-
+        A function whose result is exactly a list returns a class laid out as a list
+        (extensions.tree_root_as: list).
+    in_subset:
+      - FunctionalProfile
+
+  errors:
+    domain: function_definition
+    range: class_definition
+    multivalued: true
+    description: Classes describing the ways in which the function can fail.
+    comments:
+      - >-
+        These are not return values. How a failure reaches the caller is left to the implementing
+        runtime. The error classes can be for example used to generate exception classes.
+    in_subset:
+      - FunctionalProfile
+
 # ==================================
 # Classes                          #
 # ==================================
@@ -2810,6 +2872,7 @@ classes:
       - enums
       - slot_definitions
       - classes
+      - functions
       - metamodel_version
       - source_file
       - source_file_date
@@ -3321,6 +3384,22 @@ classes:
       - swrl:Imp
     in_subset:
       - SpecificationSubset
+
+  function_definition:
+    class_uri: fno:Function
+    description: >-
+      A named function over the elements of a schema. Its parameters are the slots of one class.
+      The return value is a class, a type or an enum.
+    is_a: element
+    slots:
+      - parameters
+      - returns
+      - errors
+    see_also:
+      - https://fno.io/spec/
+    status: testing
+    in_subset:
+      - FunctionalProfile
 
   array_expression:
     description: defines the dimensions of an array
