@@ -131,7 +131,7 @@ subsets:
   FunctionalProfile:
     title: functional profile
     description: |-
-      A profile that includes the metamodel elements for describing named functions that take the 
+      A profile that includes the metamodel elements for describing named functions that take the
       slots of one class as their parameters and return another class.
 
       The profile reuses the [Function Ontology](https://fno.io/spec/) where possible.
@@ -2738,7 +2738,7 @@ slots:
     comments:
       - a function that takes no parameters has no value for this metaslot
       - >-
-        A parameter's range, requiredness, cardinality, default value, and constraints are 
+        A parameter's range, requiredness, cardinality, default value, and constraints are
         defined in the metaslots of the slot it comes from.
     in_subset:
       - FunctionalProfile
