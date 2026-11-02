@@ -42,13 +42,13 @@ jobs:
           git remote add upstream https://github.com/linkml/linkml-model
           git fetch upstream --tags
       - name: Validate all metamodel files
-        uses: NeverBlink-OSS/linkml-scala-action@v0.17.1
+        uses: NeverBlink-OSS/linkml-scala-action@v0.17.2
         with:
           working-directory: linkml_model/model/schema
           files: "*.yaml"
           import-map: "import_map.json"
       - name: Lint the main metamodel file
-        uses: NeverBlink-OSS/linkml-scala-action@v0.17.1
+        uses: NeverBlink-OSS/linkml-scala-action@v0.17.2
         with:
           working-directory: linkml_model/model/schema
           files: "meta.yaml"
