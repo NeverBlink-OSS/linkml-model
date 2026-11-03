@@ -126,9 +126,9 @@ types:
     uri: xsd:anyURI
     base: URIorCURIE
     repr: str
-    description: a URI (IRI) or a CURIE
+    description: an IRI (URI) or a CURIE
     comments:
-      - IRIs are also allowed, name is kept for backwards compatibility.
+      - IRIs are allowed, name is kept for backwards compatibility.
       - Loaders should always attempt CURIE to IRI expansion.
       - Loaders may emit warnings if a value looks like an CURIE, but a prefix is missing.
       - Dumpers should always perform IRI to CURIE compaction, picking the longest prefix if multiple match.
@@ -142,7 +142,7 @@ types:
     repr: str
     description: a compact URI
     comments:
-      - in RDF serializations this MUST be expanded to a IRI
+      - in RDF serializations this MUST be expanded to an IRI
       - in non-RDF serializations MAY be serialized as the compact representation
     notes: >-
       If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "curie".
@@ -152,7 +152,7 @@ types:
     uri: xsd:anyURI
     base: URI
     repr: str
-    description: a complete URI (IRI)
+    description: a complete IRI (URI)
     comments:
       - IRIs are allowed, name is kept for backwards compatibility.
     notes: >-
