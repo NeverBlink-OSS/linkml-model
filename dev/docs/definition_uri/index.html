@@ -1003,7 +1003,7 @@
 
 
 <h1 id="slot-definition_uri">Slot: definition_uri</h1>
-<p><em>The native URI of the element. This is always within the namespace of the containing schema. Contrast with the assigned URI, via class_uri or slot_uri</em></p>
+<p><em>The native IRI (URI) of the element. This is always within the namespace of the containing schema. Contrast with the assigned IRI, via class_uri or slot_uri</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/linkml/definition_uri">linkml:definition_uri</a></p>
 <!-- no inheritance hierarchy -->
@@ -1108,6 +1108,7 @@
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
+<li>IRIs are allowed, name is kept for backwards compatibility.</li>
 <li>Formed by combining the default_prefix with the normalized element name</li>
 </ul>
 <h2 id="see-also">See Also</h2>
@@ -1145,9 +1146,10 @@
 <details>
 
 <pre><code class="language-yaml">name: definition_uri
-description: The native URI of the element. This is always within the namespace of
-  the containing schema. Contrast with the assigned URI, via class_uri or slot_uri
+description: The native IRI (URI) of the element. This is always within the namespace
+  of the containing schema. Contrast with the assigned IRI, via class_uri or slot_uri
 comments:
+- IRIs are allowed, name is kept for backwards compatibility.
 - Formed by combining the default_prefix with the normalized element name
 from_schema: https://w3id.org/linkml/meta
 see_also:

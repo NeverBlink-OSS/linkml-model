@@ -1025,7 +1025,7 @@
 
 
 <h1 id="slot-slot_uri">Slot: slot_uri</h1>
-<p><em>URI of the class that provides a semantic interpretation of the slot in a linked data context. The URI may come from any namespace and may be shared between schemas.</em></p>
+<p><em>IRI (URI) of the class that provides a semantic interpretation of the slot in a linked data context. The IRI may come from any namespace and may be shared between schemas.</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/linkml/slot_uri">linkml:slot_uri</a></p>
 <!-- no inheritance hierarchy -->
@@ -1099,6 +1099,7 @@
 </ul>
 <h2 id="comments">Comments</h2>
 <ul>
+<li>IRIs are allowed, name is kept for backwards compatibility.</li>
 <li>Assigning slot_uris can provide additional hooks for interoperation, indicating a common conceptual model</li>
 <li>To use a URI or CURIE as a range, create a class with the URI or CURIE as the class_uri</li>
 </ul>
@@ -1137,10 +1138,11 @@
 <details>
 
 <pre><code class="language-yaml">name: slot_uri
-description: URI of the class that provides a semantic interpretation of the slot
-  in a linked data context. The URI may come from any namespace and may be shared
+description: IRI (URI) of the class that provides a semantic interpretation of the
+  slot in a linked data context. The IRI may come from any namespace and may be shared
   between schemas.
 comments:
+- IRIs are allowed, name is kept for backwards compatibility.
 - Assigning slot_uris can provide additional hooks for interoperation, indicating
   a common conceptual model
 - To use a URI or CURIE as a range, create a class with the URI or CURIE as the class_uri

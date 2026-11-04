@@ -1025,7 +1025,7 @@
 
 
 <h1 id="slot-class_uri">Slot: class_uri</h1>
-<p><em>URI of the class that provides a semantic interpretation of the element in a linked data context. The URI may come from any namespace and may be shared between schemas</em></p>
+<p><em>IRI (URI) of the class that provides a semantic interpretation of the element in a linked data context. The IRI may come from any namespace and may be shared between schemas</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/linkml/class_uri">linkml:class_uri</a></p>
 <!-- no inheritance hierarchy -->
@@ -1099,6 +1099,7 @@
 </ul>
 <h2 id="comments">Comments</h2>
 <ul>
+<li>IRIs are allowed, name is kept for backwards compatibility.</li>
 <li>Assigning class_uris can provide additional hooks for interoperation, indicating a common conceptual model</li>
 </ul>
 <h2 id="see-also">See Also</h2>
@@ -1136,10 +1137,11 @@
 <details>
 
 <pre><code class="language-yaml">name: class_uri
-description: URI of the class that provides a semantic interpretation of the element
-  in a linked data context. The URI may come from any namespace and may be shared
-  between schemas
+description: IRI (URI) of the class that provides a semantic interpretation of the
+  element in a linked data context. The IRI may come from any namespace and may be
+  shared between schemas
 comments:
+- IRIs are allowed, name is kept for backwards compatibility.
 - Assigning class_uris can provide additional hooks for interoperation, indicating
   a common conceptual model
 in_subset:

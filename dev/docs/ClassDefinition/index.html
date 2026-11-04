@@ -1005,7 +1005,7 @@
 <tr>
 <td><a href="../class_uri/">class_uri</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>URI of the class that provides a semantic interpretation of the element in a ...</td>
+<td>IRI (URI) of the class that provides a semantic interpretation of the element...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -1179,7 +1179,7 @@
 <tr>
 <td><a href="../definition_uri/">definition_uri</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>The native URI of the element</td>
+<td>The native IRI (URI) of the element</td>
 <td><a href="../Element/">Element</a></td>
 </tr>
 <tr>
@@ -1799,10 +1799,11 @@ attributes:
     inlined: true
   class_uri:
     name: class_uri
-    description: URI of the class that provides a semantic interpretation of the element
-      in a linked data context. The URI may come from any namespace and may be shared
-      between schemas
+    description: IRI (URI) of the class that provides a semantic interpretation of
+      the element in a linked data context. The IRI may come from any namespace and
+      may be shared between schemas
     comments:
+    - IRIs are allowed, name is kept for backwards compatibility.
     - Assigning class_uris can provide additional hooks for interoperation, indicating
       a common conceptual model
     in_subset:
@@ -2416,9 +2417,10 @@ attributes:
     range: boolean
   definition_uri:
     name: definition_uri
-    description: The native URI of the element. This is always within the namespace
-      of the containing schema. Contrast with the assigned URI, via class_uri or slot_uri
+    description: The native IRI (URI) of the element. This is always within the namespace
+      of the containing schema. Contrast with the assigned IRI, via class_uri or slot_uri
     comments:
+    - IRIs are allowed, name is kept for backwards compatibility.
     - Formed by combining the default_prefix with the normalized element name
     from_schema: https://w3id.org/linkml/meta
     see_also:

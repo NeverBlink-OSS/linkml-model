@@ -1003,7 +1003,7 @@
 
 
 <h1 id="slot-type_uri">Slot: type_uri</h1>
-<p><em>The uri that defines the possible values for the type definition</em></p>
+<p><em>The IRI (URI) that defines the possible values for the type definition</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/linkml/type_uri">linkml:type_uri</a>
 Alias: uri</p>
@@ -1074,6 +1074,7 @@ Alias: uri</p>
 </ul>
 <h2 id="comments">Comments</h2>
 <ul>
+<li>IRIs are allowed, name is kept for backwards compatibility.</li>
 <li>uri is typically drawn from the set of URI's defined in OWL (<a href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Datatype_Maps">https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Datatype_Maps</a>)</li>
 <li>every root type must have a type uri</li>
 </ul>
@@ -1107,8 +1108,9 @@ Alias: uri</p>
 <details>
 
 <pre><code class="language-yaml">name: type_uri
-description: The uri that defines the possible values for the type definition
+description: The IRI (URI) that defines the possible values for the type definition
 comments:
+- IRIs are allowed, name is kept for backwards compatibility.
 - uri is typically drawn from the set of URI's defined in OWL (https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Datatype_Maps)
 - every root type must have a type uri
 in_subset:

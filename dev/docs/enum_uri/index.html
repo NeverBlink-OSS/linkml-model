@@ -925,6 +925,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1003,7 +1014,7 @@
 
 
 <h1 id="slot-enum_uri">Slot: enum_uri</h1>
-<p><em>URI of the enum that provides a semantic interpretation of the element in a linked data context. The URI may come from any namespace and may be shared between schemas</em></p>
+<p><em>IRI (URI) of the enum that provides a semantic interpretation of the element in a linked data context. The IRI may come from any namespace and may be shared between schemas</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/linkml/enum_uri">linkml:enum_uri</a></p>
 <!-- no inheritance hierarchy -->
@@ -1075,6 +1086,10 @@
 <ul>
 <li>public ID</li>
 </ul>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>IRIs are allowed, name is kept for backwards compatibility.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="administrative-metadata">Administrative Metadata</h3>
 <p><strong>Rank:</strong> 199</p>
@@ -1105,9 +1120,11 @@
 <details>
 
 <pre><code class="language-yaml">name: enum_uri
-description: URI of the enum that provides a semantic interpretation of the element
-  in a linked data context. The URI may come from any namespace and may be shared
-  between schemas
+description: IRI (URI) of the enum that provides a semantic interpretation of the
+  element in a linked data context. The IRI may come from any namespace and may be
+  shared between schemas
+comments:
+- IRIs are allowed, name is kept for backwards compatibility.
 in_subset:
 - SpecificationSubset
 - BasicSubset

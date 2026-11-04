@@ -238,9 +238,10 @@ slots:
     rank: 99
     domain: element
     description: >-
-      The native URI of the element. This is always within the namespace of the containing schema.
-      Contrast with the assigned URI, via class_uri or slot_uri
+      The native IRI (URI) of the element. This is always within the namespace of the containing schema.
+      Contrast with the assigned IRI, via class_uri or slot_uri
     comments:
+      - IRIs are allowed, name is kept for backwards compatibility.
       - Formed by combining the default_prefix with the normalized element name
     range: uriorcurie
     readonly: filled in by the schema loader or schema view
@@ -708,7 +709,9 @@ slots:
       - public ID
     domain: enum_definition
     range: uriorcurie
-    description: URI of the enum that provides a semantic interpretation of the element in a linked data context. The URI may come from any namespace and may be shared between schemas
+    description: IRI (URI) of the enum that provides a semantic interpretation of the element in a linked data context. The IRI may come from any namespace and may be shared between schemas
+    comments:
+      - IRIs are allowed, name is kept for backwards compatibility.
     ifabsent: class_curie
     in_subset:
       - SpecificationSubset
@@ -1324,8 +1327,9 @@ slots:
     domain: class_definition
     range: uriorcurie
     description: >-
-      URI of the class that provides a semantic interpretation of the element in a linked data context. The URI may come from any namespace and may be shared between schemas
+      IRI (URI) of the class that provides a semantic interpretation of the element in a linked data context. The IRI may come from any namespace and may be shared between schemas
     comments:
+      - IRIs are allowed, name is kept for backwards compatibility.
       - Assigning class_uris can provide additional hooks for interoperation, indicating a common conceptual model
     ifabsent: class_curie
     in_subset:
@@ -1565,8 +1569,9 @@ slots:
     range: uriorcurie
     ifabsent: slot_curie
     description: >-
-      URI of the class that provides a semantic interpretation of the slot in a linked data context. The URI may come from any namespace and may be shared between schemas.
+      IRI (URI) of the class that provides a semantic interpretation of the slot in a linked data context. The IRI may come from any namespace and may be shared between schemas.
     comments:
+      - IRIs are allowed, name is kept for backwards compatibility.
       - Assigning slot_uris can provide additional hooks for interoperation, indicating a common conceptual model
       - To use a URI or CURIE as a range, create a class with the URI or CURIE as the class_uri
     in_subset:
@@ -2430,8 +2435,9 @@ slots:
     range: uriorcurie
     alias: uri
     inherited: true
-    description: The uri that defines the possible values for the type definition
+    description: The IRI (URI) that defines the possible values for the type definition
     comments:
+      - IRIs are allowed, name is kept for backwards compatibility.
       - uri is typically drawn from the set of URI's defined in OWL (https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Datatype_Maps)
       - every root type must have a type uri
     in_subset:
