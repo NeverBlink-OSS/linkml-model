@@ -886,6 +886,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -969,17 +980,17 @@
 <tr>
 <td>UNCOMMITTED</td>
 <td>None</td>
-<td></td>
+<td>Slot value may or may not be present</td>
 </tr>
 <tr>
 <td>PRESENT</td>
 <td>None</td>
-<td></td>
+<td>Slot value is present</td>
 </tr>
 <tr>
 <td>ABSENT</td>
 <td>None</td>
-<td></td>
+<td>Slot value is absent</td>
 </tr>
 </tbody>
 </table>
@@ -998,6 +1009,10 @@
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://github.com/orgs/linkml/discussions/3813">https://github.com/orgs/linkml/discussions/3813</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="administrative-metadata">Administrative Metadata</h3>
 <p><strong>Status:</strong> testing
@@ -1012,15 +1027,20 @@
 <pre><code class="language-yaml">name: presence_enum
 description: enumeration of conditions by which a slot value should be set
 from_schema: https://w3id.org/linkml/meta
+see_also:
+- https://github.com/orgs/linkml/discussions/3813
 status: testing
 rank: 11
 permissible_values:
   UNCOMMITTED:
     text: UNCOMMITTED
+    description: Slot value may or may not be present
   PRESENT:
     text: PRESENT
+    description: Slot value is present
   ABSENT:
     text: ABSENT
+    description: Slot value is absent
 
 </code></pre>
 

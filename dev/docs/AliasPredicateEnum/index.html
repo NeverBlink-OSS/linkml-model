@@ -969,22 +969,22 @@
 <tr>
 <td>EXACT_SYNONYM</td>
 <td>skos:exactMatch</td>
-<td></td>
+<td>The element and the alias have identical meaning</td>
 </tr>
 <tr>
 <td>RELATED_SYNONYM</td>
 <td>skos:relatedMatch</td>
-<td></td>
+<td>The element and the alias have related meanings</td>
 </tr>
 <tr>
 <td>BROAD_SYNONYM</td>
 <td>skos:broaderMatch</td>
-<td></td>
+<td>The element has a broader meaning than the alias</td>
 </tr>
 <tr>
 <td>NARROW_SYNONYM</td>
 <td>skos:narrowerMatch</td>
-<td></td>
+<td>The element has a narrower meaning than the alias</td>
 </tr>
 </tbody>
 </table>
@@ -1020,15 +1020,19 @@ rank: 5
 permissible_values:
   EXACT_SYNONYM:
     text: EXACT_SYNONYM
+    description: The element and the alias have identical meaning.
     meaning: skos:exactMatch
   RELATED_SYNONYM:
     text: RELATED_SYNONYM
+    description: The element and the alias have related meanings.
     meaning: skos:relatedMatch
   BROAD_SYNONYM:
     text: BROAD_SYNONYM
+    description: The element has a broader meaning than the alias.
     meaning: skos:broaderMatch
   NARROW_SYNONYM:
     text: NARROW_SYNONYM
+    description: The element has a narrower meaning than the alias.
     meaning: skos:narrowerMatch
 
 </code></pre>

@@ -735,19 +735,19 @@
 <tr>
 <td><a href="../import_from/">import_from</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td></td>
+<td>Source of the import expression</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../import_as/">import_as</a></td>
 <td>0..1 <br/> <a href="../Ncname/">Ncname</a></td>
-<td></td>
+<td>Alias to use for this import</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../import_map/">import_map</a></td>
 <td>* <br/> <a href="../Setting/">Setting</a></td>
-<td></td>
+<td>Settings to use for this import</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -1051,6 +1051,7 @@ mixins:
 attributes:
   import_from:
     name: import_from
+    description: Source of the import expression
     from_schema: https://w3id.org/linkml/meta
     status: testing
     rank: 1000
@@ -1062,6 +1063,7 @@ attributes:
     required: true
   import_as:
     name: import_as
+    description: Alias to use for this import
     from_schema: https://w3id.org/linkml/meta
     status: testing
     rank: 1000
@@ -1072,6 +1074,7 @@ attributes:
     range: ncname
   import_map:
     name: import_map
+    description: Settings to use for this import
     from_schema: https://w3id.org/linkml/meta
     status: testing
     rank: 1000
